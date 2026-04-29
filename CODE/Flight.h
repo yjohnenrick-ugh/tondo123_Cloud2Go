@@ -3,80 +3,30 @@
 // Halimbawa: Flight 10, Destination, at Presyo.
 // Isipin mo ito na parang "Biodata ng isang flight.
 
-#include <iostream>
+#ifndef FLIGHT_H
+#define FLIGHT_H
+
 #include <string>
 using namespace std;
 
-// Flight Class (Blueprint)
-class Flight {
-private:
-    int flightID;
-    string airlineName;
-    string origin;
-    string destination;
-    string departureTime;
-    double ticketPrice;
-    int availableSeats;
+struct Flight {
 
-public:
-    // Constructor
-    Flight(int id, string airline, string from, string to,
-           string departure, double price, int seats) {
-        flightID = id;
-        airlineName = airline;
-        origin = from;
-        destination = to;
-        departureTime = departure;
-        ticketPrice = price;
-        availableSeats = seats;
-    }
+    int flightNumber;      // PURPOSE: Unique ID of the flight
+    string airlineName;    // PURPOSE: Name of the airline
+    string origin;         // PURPOSE: Starting location of the flight
+    string destination;    // PURPOSE: Destination of the flight (e.g., Singapore)
+    string country;        // PURPOSE: Destination country
 
-    // Display Flight Information
-    void displayFlightInfo() const {
-        cout << "\n===== FLIGHT INFORMATION =====" << endl;
-        cout << "Flight ID: " << flightID << endl;
-        cout << "Airline Name: " << airlineName << endl;
-        cout << "Origin: " << origin << endl;
-        cout << "Destination: " << destination << endl;
-        cout << "Departure Time: " << departureTime << endl;
-        cout << "Ticket Price: PHP " << ticketPrice << endl;
-        cout << "Available Seats: " << availableSeats << endl;
-        cout << "==============================\n";
-    }
+    string departureDate;  // PURPOSE: Date of departure
+    string departureTime;  // PURPOSE: Time of departure
+    string arrivalTime;    // PURPOSE: Estimated arrival time
+
+    double price;          // PURPOSE: Ticket price
+    int totalSeats;        // PURPOSE: Total number of seats
+    int reservedSeats;     // PURPOSE: Number of seats already reserved
+
+    bool seats[6];         // PURPOSE: Seat availability (true = booked, false = available)
+    bool isAvailable;      // PURPOSE: Flight availability status
 };
 
-int main() {
-    int id, seats;
-    string airline, origin, destination, departure;
-    double price;
-
-    cout << "Enter Flight ID: ";
-    cin >> id;
-    cin.ignore();
-
-    cout << "Enter Airline Name: ";
-    getline(cin, airline);
-
-    cout << "Enter Origin: ";
-    getline(cin, origin);
-
-    cout << "Enter Destination: ";
-    getline(cin, destination);
-
-    cout << "Enter Departure Time: ";
-    getline(cin, departure);
-
-    cout << "Enter Ticket Price: ";
-    cin >> price;
-
-    cout << "Enter Available Seats: ";
-    cin >> seats;
-
-    // Create Flight Object using user input
-    Flight flight1(id, airline, origin, destination, departure, price, seats);
-
-    // Display entered flight details
-    flight1.displayFlightInfo();
-
-    return 0;
-}
+#endif
