@@ -2,8 +2,7 @@
 #include <iostream>
 #include <string>
 
-// Kailangan nating i-declare ang mga functions mula sa Airline_BookingManager.cpp
-// para makita sila ng main.cpp
+
 void displayHeader();
 void displayMenu();
 void showFlightsTable(const Flight flights[], int size);
@@ -14,7 +13,7 @@ void showBookingHistory();
 using namespace std;
 
 int main() {
-    // 1. INITIALIZATION: Dito natin ilalagay yung records (Topic 10 & 11)
+   
     const int SIZE = 5;
     Flight flights[SIZE] = {
         {101, "Cloud2Go", "Manila", "Singapore", "SG", "May 15", "08:00", "11:00", 5000.0, 5, 0, {false}, true},
@@ -26,25 +25,24 @@ int main() {
 
     int choice;
 
-    // 2. MAIN LOOP: Para bumabalik sa menu (Topic 05: Decision Control)
+    
     while (true) {
-        system("cls"); // Linisin ang screen para magmukhang professional app
+        system("cls"); 
         displayHeader();
         displayMenu();
         
         cout << "Enter Choice: ";
         cin >> choice;
 
-        if (choice == 1) { // Start Booking
-            searchByBudget(flights, SIZE);
+        if (choice == 1) { 
             processBooking(flights, SIZE);
         } 
-        else if (choice == 2) { // View History/Flights
+        else if (choice == 2) {
             system("cls");
             showFlightsTable(flights, SIZE);
             showBookingHistory();
         } 
-        else if (choice == 3) { // Exit
+        else if (choice == 3) {
             cout << "\nThank you for using Cloud2Go! Fly safe.\n";
             break;
         } 
