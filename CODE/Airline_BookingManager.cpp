@@ -1,7 +1,4 @@
-// PURPOSE: Ito ang Implementation ng Manager Class.
-// Dito dapat nakasulat ang mahabang code kung paano mag-save o mag-delete.
-// Dahil 1st year basic setup tayo, ang mga utos ay nasa .h file muna 
-// para hindi tayo magkaroon ng "Spaghetti Code" o buhól-buhól na logic.
+
 #ifndef BOOKING_MANAGER_H
 #define BOOKING_MANAGER_H
 
@@ -123,6 +120,7 @@ void processBooking(Flight flights[], int size) {
     }
 
     cout << "Flight not found.\n";
+    system("pause");
 }
 
 void printReceipt(string pName, Flight f, int sNum) {
