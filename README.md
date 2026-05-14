@@ -6,9 +6,10 @@ SDG 9 - Industry and Innovation
 This project helps improve the booking proccess by creating a simple airline reservation system by using C++
 
 Project Description:
-Tondo_Cloud2Go is a simple console-based airline booking system made using the c++ programming language.
-The system allows users to view, search flights based on their budget, book seats, and view booking history.
-The program uses basic C++ concepts such as functions, arrays, loops, structures, and conditional statements.
+The Cloud2Go Airline Booking System is a simple C++ console-based program that simulates a basic airline reservation process.
+It allows users to view available flights, search flights based on budget, book a seat, and view booking history.
+The goal of this project is to apply basic programming concepts such as functions, structures, arrays, and user input handling.
+
 
 Installation / usage
 1. Download or clone the repository.
