@@ -35,10 +35,10 @@ public:
     void showFlights();
     void processBooking();
     bool searchByBudget();
-    void updateFlightPrice();
-    void updatePassengerInfo();
+    void updatePassengerSeat();
     void cancelBooking();
     void viewHistory(); 
+    void updatePassengerInfo();
 
     int getValidatedInt(string prompt);
     double getValidatedDouble(string prompt);
