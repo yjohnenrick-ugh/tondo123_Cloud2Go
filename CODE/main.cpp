@@ -13,8 +13,8 @@ int main() {
         cout << "===================================" << endl;
         cout << "||     CLOUD2GO AIRLINE SYSTEM   ||" << endl;
         cout << "===================================" << endl;
-        cout << "[1] Search & Book Flight         ||" << endl;
-        cout << "[2] View All Flights             ||" << endl;
+        cout << "[1] Book Flight (Search)         ||" << endl;
+        cout << "[2] View Transaction History     ||" << endl;
         cout << "[3] Update Passenger/Price       ||" << endl;
         cout << "[4] Cancel Booking (Delete)      ||" << endl;
         cout << "[5] Exit                         ||" << endl;
@@ -23,21 +23,19 @@ int main() {
         choice = manager.getValidatedInt("Choice: ");
 
         if (choice == 1) {
-            System("cls");
-
-            if (manager.searchByBudget() == true) {
+            system("cls");
+            if (manager.searchByBudget()) {
                 char ok;
                 cout << "Book now? (Y/N): ";
                 cin >> ok;
-
                 if (toupper(ok) == 'Y') {
                     manager.processBooking();
                 }
             }
-          
         }
         else if (choice == 2) {
-            manager.showFlights();
+            system("cls");
+            manager.viewHistory();
             system("pause");
         }
         else if (choice == 3) {
