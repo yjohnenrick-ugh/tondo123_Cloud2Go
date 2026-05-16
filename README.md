@@ -441,10 +441,9 @@ Invalid. Enter a number.
 - File Data Storage
 - Input Validation
 
+---
 
-
-
-Contributor/Members:
+# Contributor/Members:
 
 John Enrick Yumul
 
