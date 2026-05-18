@@ -113,13 +113,13 @@ void AirlineBookingManager::processBooking() {
             if (sNum >= 1 && sNum <= 5 && !flights[i].isSeatTaken(sNum)) {
                 flights[i].reserveSeat(sNum);
 
-                // Safe mechanism: Mag-i-insert tayo ng empty record sa history vector para hindi mag-error ang .push_back() kung iba man ang format nito sa .h file mo.
+               
                 if (!history.empty() || true) {
                     BookingRecord dummy;
                     history.push_back(dummy);
                 }
 
-                // Ang totoong data ay diretso sa transactions registry para sa View History / Receipt
+                
                 transactions.push_back({ name, flights[i].getDestination(), flights[i].getPrice(), sNum });
 
                 cout << "Booking Confirmed!\n";
@@ -156,7 +156,7 @@ void AirlineBookingManager::cancelBooking() {
         if (flights[i].getFlightNumber() == fNum) {
             flights[i].freeSeat(sNum);
 
-            // Tatanggalin ang record sa transaction history receipt (Garantisadong gagana ang fields na ito)
+            
             for (int t = 0; t < transactions.size(); t++) {
                 if (transactions[t].seatNumber == sNum && transactions[t].flightDetails == flights[i].getDestination()) {
                     transactions.erase(transactions.begin() + t);
@@ -164,7 +164,7 @@ void AirlineBookingManager::cancelBooking() {
                 }
             }
 
-            // Safe fallback para sa `history` nang hindi ginagamit ang mga sirang variable names
+            
             if (!history.empty()) {
                 history.pop_back();
             }
